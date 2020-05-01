@@ -1,3 +1,6 @@
+# Manager App
+Simple app for managing employees on a business built using React Native, Redux and Firebase 
+
 ![alt Mockup](.github/mockup.png)
 
 ### 📱 Demo
@@ -28,3 +31,5 @@ $ yarn start
 ## 📝 License
 
 This project is licensed under the terms of the [MIT](https://github.com/jeferson-sb/manager-app/blob/master/LICENSE) license
+
+> Made with ♥ by Jeferson © 2020
