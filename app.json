@@ -2,7 +2,6 @@
   "expo": {
     "name": "manager-app",
     "slug": "manager",
-    "owner": "Jeferson S. Brito",
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -16,7 +15,11 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "com.jefersonsb.manager"
+    },
     "ios": {
+      "bundleIdentifier": "com.jefersonsb.manager",
       "supportsTablet": true
     }
   }
