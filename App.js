@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import * as firebase from 'firebase';
 import ReduxThunk from 'redux-thunk';
 
+import firebaseConfig from './src/config/firebase';
 import Routes from './src/routes';
 import reducers from './src/reducers';
 
@@ -12,14 +13,6 @@ YellowBox.ignoreWarnings(['Setting a timer']);
 
 export default function App() {
   useEffect(() => {
-    const firebaseConfig = {
-      apiKey: '',
-      authDomain: '',
-      databaseURL: '',
-      storageBucket: '',
-      measurementId: '',
-    };
-
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
     }

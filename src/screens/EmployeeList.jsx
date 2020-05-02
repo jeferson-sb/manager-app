@@ -20,11 +20,16 @@ function EmployeeList(props) {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>All Employees</Text>
-      <FlatList
-        data={employees}
-        keyExtractor={(employee) => employee.uid}
-        renderItem={({ item }) => <ListItem employee={item} />}
-      />
+
+      {!employees.length ? (
+        <Text style={{ color: '#fff' }}>No employees found! :(</Text>
+      ) : (
+        <FlatList
+          data={employees}
+          keyExtractor={(employee) => employee.uid}
+          renderItem={({ item }) => <ListItem employee={item} />}
+        />
+      )}
     </View>
   );
 }
@@ -45,11 +50,13 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state) => {
-  const employees = Object.entries(state.employees).map((item) => {
-    const [uid, data] = item;
-    return { ...data, uid };
-  });
-  return { employees };
+  if (state.employees) {
+    const employees = Object.entries(state.employees).map((item) => {
+      const [uid, data] = item;
+      return { ...data, uid };
+    });
+    return { employees };
+  }
 };
 
 export default connect(mapStateToProps, { employeesFetch })(EmployeeList);
