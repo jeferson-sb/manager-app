@@ -1,0 +1,31 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: react-native-web
+    versions:
+    - 0.14.10
+    - 0.14.11
+  - dependency-name: "@react-navigation/stack"
+    versions:
+    - 5.12.8
+    - 5.14.2
+  - dependency-name: react-native-screens
+    versions:
+    - 2.16.1
+    - 2.17.1
+  - dependency-name: firebase
+    versions:
+    - 8.2.1
+    - 8.2.5
+  - dependency-name: react-native-dotenv
+    versions:
+    - 2.4.3
+    - 2.5.1
+  - dependency-name: expo
+    versions:
+    - 40.0.0
